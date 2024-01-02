@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration>
+
+<hibernate-configuration>
+
+	<session-factory>
+		<!-- DB configuration -->
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ramya</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">Root123</property>
+
+		<!-- Dialect Configuration -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+		<!--
+		      create -> if the table does not exist, it will create; if it exists, then it will drop the table and
+		      create a new table.
+		      update -> If the table does not exist, it'll create a table.
+		                If the table already exists, then it will update.
+		-->
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+
+		<!-- Mapping Config -->
+		<mapping class="RR.MobileApplication"/>
+		<mapping class="RR.User"/>
+	</session-factory>
+
+</hibernate-configuration>
